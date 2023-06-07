@@ -1,0 +1,41 @@
+.nav-link{
+    color: white;
+}
+.nav-link:hover
+{
+color: #af812c;
+transition: color 0.4s;
+}
+table{
+    border: 10px;
+    border-color: black;
+    background-color:rgb(238, 238, 238);
+}
+/*botoes comprar*/
+.coracao{
+    color: #2b2b2b;
+    padding-left: 20px;
+    
+}
+.coracao:hover{
+    color: red;
+    transition: color 0.4s;
+}
+/*titulo*/
+.texto1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 250%;
+    text-align: right;
+    padding-bottom: 20px
+    
+}
+.texto2{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 250%;
+    text-align: center;
+    padding-bottom: 20px
+}
+.linha1{
+    background-color: #2b2b2b;
+    color: white;
+}

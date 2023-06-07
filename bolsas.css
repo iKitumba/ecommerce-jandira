@@ -1,0 +1,33 @@
+.nav-link{
+    color: white;
+}
+.nav-link:hover
+{
+color: #af812c;
+transition: color 0.4s;
+}
+.sidebar{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 900px;
+    background-color: #2b2b2b;
+    padding: 20px;
+    width: 200px;
+    color: #2b2b2b;
+}
+.botao{
+
+    background-color: white;
+    width: 100px;
+    padding:10px;
+    margin-bottom: 50px;
+    
+}
+.icone{
+
+   
+    margin-bottom: 80px;
+    padding-right: 100px;
+    margin-top: 90px;
+}

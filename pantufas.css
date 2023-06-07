@@ -1,0 +1,17 @@
+.nav-link{
+    color: white;
+}
+.nav-link:hover
+{
+color: #af812c;
+transition: color 0.4s;
+}
+/*desconto*/
+.col{
+    padding-top: 100px;
+    background-color: #e9e8e8;
+    text-align: center;
+    
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}   

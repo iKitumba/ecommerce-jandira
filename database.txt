@@ -1,0 +1,189 @@
+# cargos 
+- id_cargo
+- nome_cargo
+
+# funcionarios
+- id_funcionario
+- nome_funcionario
+- foto_perfil
+- telefone_funcionario
+- endereco
+- cargo_id
+
+# acessos
+- id_acesso
+- id_funcionario
+- nome_usuario
+- senha,
+- tipo_acesso ENUM('ADMIM', 'NORMAL')
+
+# clientes
+- id_cliente
+- nome_cliente
+- telefone_cliente
+- email_cliente
+- endereco_cliente
+- senha_cliente
+
+# categorias
+- id_categoria,
+- nome_categoria
+
+produtos
+- id_produto
+- nome_produto
+- preco_produto
+- id_categoria
+- quantidade_produto
+
+pedidos
+- id_pedido
+- id_cliente
+- id_funcionario
+- data_pedido
+- valor_total DECIMAL(10, 2),
+    FOREIGN KEY (id_cliente) REFERENCES Clientes(id_cliente),
+    FOREIGN KEY (id_funcionario) REFERENCES Funcionarios(id_funcionario)
+);
+
+-- Criação da tabela de itens do pedido
+CREATE TABLE ItensPedido (
+    id_pedido INT,
+    id_produto INT,
+    quantidade INT,
+    PRIMARY KEY (id_pedido, id_produto),
+    FOREIGN KEY (id_pedido) REFERENCES Pedidos(id_pedido),
+    FOREIGN KEY (id_produto) REFERENCES Produtos(id_produto)
+);
+
+
+
+
+
+
+CREATE TABLE cargos(
+    id_cargo INT AUTO_INCREMENT UNIQUE PRIMARY KEY,
+    nome_cargo VARCHAR(100) NOT NULL,
+)
+
+-- Criação da tabela de funcionários
+CREATE TABLE funcionarios (
+    id_funcionario INT AUTO_INCREMENT UNIQUE PRIMARY KEY,
+    nome_funcionario VARCHAR(100) NOT NULL,
+    foto_funcionario VARCHAR(200),
+    telefone_funcionario VARCHAR(20) NOT NULL,
+    email_funcionario VARCHAR(100) NOT NULL,
+    salario_funcionario DECIMAL(10,2),
+    endereco_funcionario VARCHAR(200) NOT NULL,
+    cargo_id INT NOT NULL,
+    FOREIGN KEY(cargo_id) REFERENCES cargos(id_cargo)
+);
+
+-- Criação da tabela de acessos
+CREATE TABLE acessos (
+    id_acesso INT AUTO_INCREMENT UNIQUE PRIMARY KEY,
+    id_funcionario INT NOT NULL,
+    nome_usuario VARCHAR(50) NOT NULL,
+    senha VARCHAR(100),
+    tipo_acesso ENUM('ADMIM', 'NORMAL') DEFAULT("NORMAL"),
+    FOREIGN KEY (id_funcionario) REFERENCES Funcionarios(id_funcionario)
+);
+
+-- Criação da tabela de clientes
+CREATE TABLE clientes (
+    id_cliente INT AUTO_INCREMENT UNIQUE PRIMARY KEY,
+    nome_cliente VARCHAR(100),
+    telefone_cliente VARCHAR(20) NOT NULL,
+    email_cliente VARCHAR(100),
+    endereco_cliente VARCHAR(200) NOT NULL,
+    senha_cliente VARCHAR(100),
+);
+
+-- Criação da tabela de categorias de produtos
+CREATE TABLE categorias (
+    id_categoria INT AUTO_INCREMENT UNIQUE PRIMARY KEY,
+    nome_categoria VARCHAR(50) NOT NULL,
+);
+
+-- Criação da tabela de produtos
+CREATE TABLE produtos (
+    id_produto INT AUTO_INCREMENT UNIQUE PRIMARY KEY,
+    nome_produto VARCHAR(100) NOT NULL,
+    foto_produto VARCHAR(100),
+    preco_produto DECIMAL(10, 2),
+    categoria_id INT NOT NULL,
+    quantidade_produto INT,
+    criado_aos DATE DEFAULT(CURRENT_DATE),
+    FOREIGN KEY (categoria) REFERENCES categorias(id_categoria)
+);
+
+-- Criação da tabela de pedidos
+CREATE TABLE pedidos (
+    id_pedido INT AUTO_INCREMENT UNIQUE PRIMARY KEY,
+    cliente_id INT NOT NULL,
+    funcionario_id INT,
+    data_pedido DATE,
+    endereco_entrega VARCHAR(200),
+    estado_pedido ENUM("PAGO", "A_CAMINHO", "ENTREGUE", "CANCELADO"),
+    valor_total DECIMAL(10, 2),
+    FOREIGN KEY (cliente_id) REFERENCES clientes(id_cliente),
+    FOREIGN KEY (funcionario_id) REFERENCES funcionarios(id_funcionario)
+);
+
+-- Criação da tabela de itens do pedido
+CREATE TABLE itens_pedido (
+    id_itens_pedido  AUTO_INCREMENT UNIQUE PRIMARY KEY,
+    pedido_id INT NOT NULL,
+    produto_id INT NOT NULL,
+    quantidade_item INT NOT NULL DEFAULT(1),
+    FOREIGN KEY (pedido_id) REFERENCES pedidos(id_pedido),
+    FOREIGN KEY (produto_id) REFERENCES produtos(id_produto)
+);
+
+
+
+
+
+
+
+
+
+
+
+$bytes = random_bytes(16); // Gera 16 bytes aleatórios
+$hash = bin2hex($bytes); // Converte os bytes em uma representação hexadecimal
+
+echo $hash;
+
+
+
+
+
+
+Para criptografar senhas em PHP, é recomendado utilizar algoritmos de hash seguros, como o bcrypt ou o Argon2. Esses algoritmos são projetados especificamente para armazenar senhas de forma segura, evitando ataques de força bruta e prevenindo o vazamento das senhas em caso de violação de segurança.
+
+Aqui está um exemplo de como você pode usar o algoritmo bcrypt para criptografar uma senha:
+
+php
+Copy code
+$senha = 'minha_senha';
+$hash = password_hash($senha, PASSWORD_DEFAULT);
+
+echo $hash;
+Nesse exemplo, password_hash é a função do PHP que criptografa a senha utilizando o algoritmo bcrypt. O segundo argumento, PASSWORD_DEFAULT, indica para o PHP usar a configuração padrão atual, que é recomendada para a maioria dos casos. O valor do hash criptografado será armazenado na variável $hash e pode ser armazenado no banco de dados ou em outro local seguro.
+
+Para verificar se uma senha fornecida corresponde ao hash criptografado, você pode usar a função password_verify. Veja um exemplo:
+
+php
+Copy code
+$senha = 'minha_senha';
+$hash = '$2y$10$J/wPcUeY1rUe3H4Ld0/J4O7nL0lbKtZ3YfTqhDgFs.0unARZPFlQK';
+
+if (password_verify($senha, $hash)) {
+    echo 'Senha correta!';
+} else {
+    echo 'Senha incorreta!';
+}
+Nesse exemplo, a função password_verify é usada para verificar se a senha fornecida corresponde ao hash armazenado. Se a senha estiver correta, será exibida a mensagem 'Senha correta!'; caso contrário, será exibida a mensagem 'Senha incorreta!'.
+
+Lembre-se de sempre usar algoritmos de hash seguros e seguir boas práticas de segurança ao armazenar senhas.
