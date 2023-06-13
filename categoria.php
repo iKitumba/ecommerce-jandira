@@ -7,7 +7,7 @@ if (isset($_GET["categoria_id"])) {
   $query2 = $connection->prepare("SELECT * FROM produtos WHERE categoria_id = ?");
   $query1->execute(array($categoria_id));
   $query2->execute(array($categoria_id));
-  if($query1->rowCount()){
+  if ($query1->rowCount()) {
     $categoria = $query1->fetchAll(PDO::FETCH_ASSOC)[0];
     $produtos = $query2->fetchAll(PDO::FETCH_ASSOC);
   } else {
@@ -21,70 +21,85 @@ if (isset($_GET["categoria_id"])) {
 
 <!DOCTYPE html>
 <html>
+
 <head>
-   
+
   <meta charset="UTF-8" />
-    <title>Aventais</title> 
-    <link rel="shortcut icon" href="atelier.ico" type="image/x-icon">
+  <title>Aventais</title>
+  <link rel="shortcut icon" href="atelier.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="./aventais.css">
+  <link rel="stylesheet" href="./aventais.css">
 
-<style>
-  #lista_podutos {
-    width: 100%;
-    display: grid;
-    gap: 12px;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-</style>
+  <style>
+    #lista_podutos {
+      width: 100%;
+      display: grid;
+      gap: 12px;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    #descricao_produto {
+
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  </style>
 </head>
+
 <body>
 
-<?php require_once("./partials/_navbar.php") ?>
-  
+  <?php require_once("./partials/_navbar.php") ?>
+
 
   <div class="container">
     <div class="row">
-      <div class=" col col-md-12">
+      <div class="col col-md-12 py-4">
         <h2> ATÉ 60% DE DESCONTO</h2>
         <h5><?php echo $categoria["nome_categoria"]; ?></h5>
       </div>
-  
+
     </div>
   </div>
- 
+
   <!-- aventais-->
   <div class="container mt-3">
-    
+
     <div id="lista_podutos">
       <!-- Início do loop de produtos -->
-      <?php 
-        for($i = 0; $i < sizeof($produtos); $i++):
-          $actualProduto = $produtos[$i];
+      <?php
+      for ($i = 0; $i < sizeof($produtos); $i++) :
+        $actualProduto = $produtos[$i];
       ?>
-      <div>
-        <div class="card mb-3">
-          <img src="./admin/fotos_produtos/<?php echo $actualProduto["foto_produto"] ?>" class="card-img-top " alt="Imagem do Produto">
-          <div class="card-body">
-            <h5 class="card-title"><?php echo $actualProduto["nome_produto"] ?></h5>
-            <p class="card-text"><?php echo $actualProduto["descricao_produto"] ?></p>
-            <h6 class="card-subtitle mb-2 text-muted">Preço: $ <?php echo $actualProduto["preco_produto"] ?></h6>
-            <a href="./adicionar_carrinho.php?id_produto=<?php echo $actualProduto["id_produto"] ?>" class="btn btn-sm">Adicionar ao Carrinho</a><a href="" class="fav"> <i class="fa fa-heart coracao " ></i> </a>
+        <div>
+          <div class="card mb-3">
+            <a href="./produto.php?id_produto=<?php echo $actualProduto["id_produto"] ?>">
+              <img src="./admin/fotos_produtos/<?php echo $actualProduto["foto_produto"] ?>" class="card-img-top " style="height: 320px; object-fit: cover;" alt="Imagem do Produto">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title"><?php echo $actualProduto["nome_produto"] ?></h5>
+              <p class="card-text" id="descricao_produto"><?php echo $actualProduto["descricao_produto"] ?></p>
+              <h6 class="font-weight-bold text-success">Preço: $ <?php echo $actualProduto["preco_produto"] ?></h6>
+              <div class="mt-4" style="display: flex; align-items: center; justify-content: space-between;">
+
+                <a href="./adicionar_carrinho.php?id_produto=<?php echo $actualProduto["id_produto"] ?>" class="btn btn-primary" style="flex: 1">Adicionar ao Carrinho</a><a href="" class="fav"> <i class="fa fa-heart coracao "></i> </a>
+              </div>
+            </div>
+
           </div>
-          
         </div>
-      </div>
-          <?php endfor; ?>
-        </div>
-      </div>
-      <!-- Fim do loop de produtos -->
-  
+      <?php endfor; ?>
+    </div>
+  </div>
+  <!-- Fim do loop de produtos -->
+
 
   <!-- rodapé-->
   <footer class="text-light mt-4" style="background-color: #2b2b2b;">
     <div class="container">
-        <br>
+      <br>
       <div class="row">
         <div class="col-md-4">
           <h5>Informações de Contato</h5>
@@ -98,7 +113,7 @@ if (isset($_GET["categoria_id"])) {
             <li><a class="links" href="#">Sobre Nós</a></li>
             <li><a class="links" href="#">Política de Privacidade</a></li>
             <li><a class="links" href="#">Termos e Condições</a></li>
-            
+
           </ul>
         </div>
         <div class="col-md-4">
@@ -116,10 +131,11 @@ if (isset($_GET["categoria_id"])) {
       &copy; 2023 Noivos & Padrinhos. Todos os direitos reservados.
     </div>
   </footer>
- 
+
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>

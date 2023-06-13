@@ -50,6 +50,10 @@ function calcularTotal() {
     return $total;
 }
 
+function numerosItemsNoCarrinho(){
+    return sizeof($_SESSION["carrinho"]);
+}
+
 // Exemplo de uso:
 
 // Adicionar itens ao carrinho
