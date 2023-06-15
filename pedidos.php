@@ -99,11 +99,11 @@
       </tbody>
     </table>
     <!-- sugestões -->
-    <h4 class="text-center my-5">
+    <!-- <h4 class="text-center my-5">
       <a class=" text-danger" style="font-size: 1rem;" href="./logout.php">
         Terminar sessão
       </a>
-    </h4>
+    </h4> -->
   </div>
 
   <?php

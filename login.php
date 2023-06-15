@@ -110,9 +110,9 @@
 
   <!-- <input class="form-control mr-sm-2" name="pesquisa" id="buscar" type="search" placeholder="Buscar" aria-label="Search" /> -->
   <?php
-  require_once("./partials/_navbar.php");
+  // require_once("./partials/_navbar.php");
   ?>
-  <div class="container">
+  <div class="containe mt-6">
     <div>
       <form id="form-cadastro" method="post" action="./admin/actions/login_cliente.php">
         <div class="form-group">
@@ -136,9 +136,10 @@
       </form>
 
     </div>
-  </div> <?php
-          require_once("./partials/_footer.php");
-          ?>
+  </div>
+  <?php
+  // require_once("./partials/_footer.php");
+  ?>
 
   <script src="vendors/@popperjs/popper.min.js"></script>
   <script src="vendors/bootstrap/bootstrap.min.js"></script>

@@ -105,9 +105,9 @@
 
 <body>
   <?php
-  require_once("./partials/_navbar.php");
+  // require_once("./partials/_navbar.php");
   ?>
-  <div class="container">
+  <div class="container my-6">
     <div>
       <form id="form-cadastro" method="post" action="./admin/actions/cadastro_cliente.php">
         <div class="form-group">
@@ -142,7 +142,7 @@
     </div>
   </div>
   <?php
-  require_once("./partials/_footer.php");
+  // require_once("./partials/_footer.php");
   ?>
 
   <script src="vendors/@popperjs/popper.min.js"></script>
