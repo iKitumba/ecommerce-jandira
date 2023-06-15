@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-   
-    <title>Aventais</title> 
-    <link rel="shortcut icon" href="atelier.ico" type="image/x-icon">
+
+  <title>Aventais</title>
+  <link rel="shortcut icon" type="image/x-icon" href="./img/2.svg" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="favoritos.css">
+  <link rel="stylesheet" href="favoritos.css">
 </head>
+
 <body>
-    <!-- barra de navegação -->
+  <!-- barra de navegação -->
   <nav class="navbar navbar-expand-lg fixed-top " style="background-color: #2b2b2b;">
     <!-- logotipo -->
     <a class="navbar-brand" href="#">
-        <img src="img/logo.png" alt="">
-      </a>
+      <img src="img/logo.png" alt="">
+    </a>
 
-      <!-- botão toggler -->
+    <!-- botão toggler -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -27,32 +29,32 @@
         <li class="nav-item active">
           <a class="nav-link" href="home.html">Início</a>
         </li>
-        
+
         <li class="nav-item">
           <a class="nav-link" href="acessorios.html">Acessórios</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="aventais.html">Aventais</a>
-          </li>
-          <li class="nav-item">
+          <a class="nav-link" href="aventais.html">Aventais</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="robes.html">Robes</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="pantufas.html">Pantufas</a>
         </li>
-        
+
       </ul>
       <!-- pesquisar -->
       <form class="form-inline ml-auto">
         <input class="form-control mr-sm-2" id="buscar" type="search" placeholder="Buscar" aria-label="Search">
-      <button class="btn btn-outline-light my-2 my-sm-0" type="submit"><i class="fas fa-search"></i> Buscar</button>
-      <a class="nav-link" href="carrinho.html"> <i class="fa fa-shopping-cart fa-1x"></i></a>
-      <a class="nav-link" href="favoritos.html"> <i class="fa fa-heart"></i></a>
+        <button class="btn btn-outline-light my-2 my-sm-0" type="submit"><i class="fas fa-search"></i> Buscar</button>
+        <a class="nav-link" href="carrinho.html"> <i class="fa fa-shopping-cart fa-1x"></i></a>
+        <a class="nav-link" href="favoritos.html"> <i class="fa fa-heart"></i></a>
       </form>
-    
+
     </div><!-- /itens da barra de navegação-->
   </nav><!-- /barra de navegação -->
-  
+
 
   <div class="container">
     <div class="row">
@@ -60,16 +62,16 @@
         <h2> ATÉ 60% DE DESCONTO</h2>
         <h5>Brincos, bolsas e muito mais</h5>
       </div>
-  
+
     </div>
   </div>
-    
+
   <!-- aventais-->
   <div class="container mt-3">
     <h2 class="texto1"> <i class="fa fa-heart" style="color: #cca152;"></i> Favoritos</h2>
-    
+
     <div class="row">
-        <img src=""  alt="">
+      <img src="" alt="">
       <!-- Início do loop de produtos -->
       <div class="col-md-3">
         <div class="card mb-3">
@@ -78,9 +80,9 @@
             <h5 class="card-title">Avental Bride Shower</h5>
             <p class="card-text">Tecido leve, inclui um bolso e a personalização</p>
             <h6 class="card-subtitle mb-2 text-muted">Preço: AOA 8.000,00</h6>
-            <a href="#" class="btn btn-sm">Adicionar ao Carrinho</a><a href="" class="fav"> <i class="fa fa-heart coracao " ></i> </a>
+            <a href="#" class="btn btn-sm">Adicionar ao Carrinho</a><a href="" class="fav"> <i class="fa fa-heart coracao "></i> </a>
           </div>
-          
+
         </div>
       </div>
 
@@ -91,9 +93,9 @@
             <h5 class="card-title">Avental Xadrez</h5>
             <p class="card-text">Tecido leve, inclui um bolso e personalização. </p>
             <h6 class="card-subtitle mb-2 text-muted">Preço: AOA 10.000,00</h6>
-            <a href="#" class="btn btn-sm">Adicionar ao Carrinho</a><a href="" class="fav"> <i class="fa fa-heart coracao " ></i> </a>
+            <a href="#" class="btn btn-sm">Adicionar ao Carrinho</a><a href="" class="fav"> <i class="fa fa-heart coracao "></i> </a>
           </div>
-          
+
         </div>
       </div>
 
@@ -104,9 +106,9 @@
             <h5 class="card-title">Avental Bride </h5>
             <p class="card-text">Tecido de qualidadeAvental personalizado, inclui renda + personalização.</p>
             <h6 class="card-subtitle mb-2 text-muted">Preço: AOA 23.000,00</h6>
-            <a href="#" class="btn btn-sm">Adicionar ao Carrinho</a><a href="" class="fav"> <i class="fa fa-heart coracao " ></i> </a>
+            <a href="#" class="btn btn-sm">Adicionar ao Carrinho</a><a href="" class="fav"> <i class="fa fa-heart coracao "></i> </a>
           </div>
-          
+
         </div>
       </div>
       <div class="col-md-3">
@@ -116,9 +118,9 @@
             <h5 class="card-title">Nome do Produto</h5>
             <p class="card-text">Descrição do Produto</p>
             <h6 class="card-subtitle mb-2 text-muted">Preço: AOA 10.000,00</h6>
-            <a href="#" class="btn btn-sm">Adicionar ao Carrinho</a><a href="" class="fav"> <i class="fa fa-heart coracao " ></i> </a>
+            <a href="#" class="btn btn-sm">Adicionar ao Carrinho</a><a href="" class="fav"> <i class="fa fa-heart coracao "></i> </a>
           </div>
-          
+
         </div>
       </div>
       <BR></BR>
@@ -130,9 +132,9 @@
             <h5 class="card-title">Nome do Produto</h5>
             <p class="card-text">Descrição do Produto</p>
             <h6 class="card-subtitle mb-2 text-muted">Preço: AOA 4.500,00</h6>
-            <a href="#" class="btn btn-sm">Adicionar ao Carrinho</a><a href="" class="fav"> <i class="fa fa-heart coracao " ></i> </a>
+            <a href="#" class="btn btn-sm">Adicionar ao Carrinho</a><a href="" class="fav"> <i class="fa fa-heart coracao "></i> </a>
           </div>
-          
+
         </div>
       </div>
       <div class="col-md-3">
@@ -142,9 +144,9 @@
             <h5 class="card-title">Nome do Produto</h5>
             <p class="card-text">Descrição do Produto</p>
             <h6 class="card-subtitle mb-2 text-muted">Preço: AOA 10.000,00</h6>
-            <a href="#" class="btn btn-sm">Adicionar ao Carrinho</a><a href="" class="fav"> <i class="fa fa-heart coracao " ></i> </a>
+            <a href="#" class="btn btn-sm">Adicionar ao Carrinho</a><a href="" class="fav"> <i class="fa fa-heart coracao "></i> </a>
           </div>
-          
+
         </div>
       </div>
       <div class="col-md-3">
@@ -154,9 +156,9 @@
             <h5 class="card-title">Nome do Produto</h5>
             <p class="card-text">Descrição do Produto</p>
             <h6 class="card-subtitle mb-2 text-muted">Preço: AOA 10.000,00</h6>
-            <a href="#" class="btn btn-sm">Adicionar ao Carrinho</a><a href="" class="fav"> <i class="fa fa-heart coracao " ></i> </a>
+            <a href="#" class="btn btn-sm">Adicionar ao Carrinho</a><a href="" class="fav"> <i class="fa fa-heart coracao "></i> </a>
           </div>
-          
+
         </div>
       </div>
       <div class="col-md-3">
@@ -166,20 +168,20 @@
             <h5 class="card-title">Nome do Produto</h5>
             <p class="card-text">Descrição do Produto</p>
             <h6 class="card-subtitle mb-2 text-muted">Preço: AOA 10.000,00</h6>
-            <a href="#" class="btn btn-sm">Adicionar ao Carrinho</a><a href="" class="fav"> <i class="fa fa-heart coracao " ></i> </a>
+            <a href="#" class="btn btn-sm">Adicionar ao Carrinho</a><a href="" class="fav"> <i class="fa fa-heart coracao "></i> </a>
           </div>
-          
+
         </div>
       </div>
 
       <!-- Fim do loop de produtos -->
     </div>
   </div>
-  
+
   <!-- rodapé-->
   <footer class=" text-light mt-4" style="background-color: #2b2b2b;">
     <div class="container">
-        <br>
+      <br>
       <div class="row">
         <div class="col-md-4">
           <h5>Informações de Contato</h5>
@@ -193,7 +195,7 @@
             <li><a class="links" href="#">Sobre Nós</a></li>
             <li><a class="links" href="#">Política de Privacidade</a></li>
             <li><a class="links" href="#">Termos e Condições</a></li>
-            
+
           </ul>
         </div>
         <div class="col-md-4">
@@ -211,10 +213,11 @@
       &copy; 2023 Noivos & Padrinhos. Todos os direitos reservados.
     </div>
   </footer>
- 
+
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>

@@ -23,10 +23,12 @@ if (isset($_GET["id_produto"])) {
 
   <meta charset="UTF-8" />
   <title>Aventais</title>
-  <link rel="shortcut icon" href="atelier.ico" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="shortcut icon" type="image/x-icon" href="./img/2.svg" />
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./aventais.css">
+  <link rel="stylesheet" href="./aventais.css"> -->
+
+  <link href="assets/css/theme.css" rel="stylesheet" />
   <!-- 
   <style>
     @media(max-width: 600px) {
@@ -45,14 +47,16 @@ if (isset($_GET["id_produto"])) {
 
   <!-- aventais-->
   <div class="container mt-3" style="display: flex; padding: 2rem 0px; gap: 2rem">
-    <img style="flex: 1; height: 450px; object-fit: cover; border-radius: 12px;" src="./admin/fotos_produtos/<?php echo $produto["foto_produto"]; ?>" />
+    <img style="flex: 1; height: 450px; object-fit: cover; " src="./admin/fotos_produtos/<?php echo $produto["foto_produto"]; ?>" />
     <div style="flex: 1; display: flex; flex-direction: column; gap: 1rem;">
-      <h1><?php echo $produto["nome_produto"]; ?></h1>
-      <h4>Preço: $ <strong><?php echo $produto["preco_produto"]; ?></strong></h4>
-      <strong style="font-size: 12px; color: green;">Entrega feita dentro de 2 semana</strong>
-      <p>
-        <?php echo $produto["descricao_produto"]; ?>
-      </p>
+      <h1 class="card-title"><?php echo $produto["nome_produto"]; ?></h1>
+      <h6 class="font-weight-bold text-success">Preço: $ <?php echo $produto["preco_produto"] ?></h6>
+      <!-- <h4>Preço: $ <strong><?php echo $produto["preco_produto"]; ?></strong></h4> -->
+      <span class="text-700">Entrega feita dentro de 2 semana</span>
+      <!-- <strong style="font-size: 12px;" class="text-primary">Entrega feita dentro de 2 semana</strong> -->
+
+      <p class="mb-5 fs-1" id="descricao_produto"><?php echo $produto["descricao_produto"]; ?></p>
+      <!-- <h5 class="card-title"><?php echo $actualProduto["nome_produto"] ?></h5> -->
       <div style="display: flex; gap: 2rem; align-items: center;">
         <!-- <div style="display: flex; gap: 8px">
             <div style="width: 35px; border: 2px solid #dddddd; height: 35px; cursor: pointer; border-radius: 30px; background-color: none; display:flex; align-items: center; justify-content: center; font-size: 14px; font-weight: normal;">
@@ -72,7 +76,11 @@ if (isset($_GET["id_produto"])) {
         </div>
       </div>
       <div style="margin-top: 3rem; display: flex; align-items: center">
-        <a id="produto_id" href="./adicionar_carrinho.php?id_produto=<?php echo $produto["id_produto"]; ?>" style="height: 36px; background-color: #cca152; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #f5f5f5; padding: 0px 2rem;">Adicionar ao Carrinho</a><a href="" class="fav"> <i class="fa fa-heart coracao "></i> </a>
+        <div class="d-grid gap-2 d-md-block">
+          <a id="produto_id" class="btn btn-lg btn-dark" href="./adicionar_carrinho.php?id_produto=<?php echo $produto["id_produto"]; ?>" role="button">Adicionar ao carrinho</a>
+
+        </div>
+        <!-- <a id="produto_id" href="./adicionar_carrinho.php?id_produto=<?php echo $produto["id_produto"]; ?>" style="height: 36px; background-color: #cca152; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #f5f5f5; padding: 0px 2rem;">Adicionar ao Carrinho</a><a href="" class="fav"> <i class="fa fa-heart coracao "></i> </a> -->
       </div>
     </div>
 
@@ -80,42 +88,9 @@ if (isset($_GET["id_produto"])) {
   <!-- Fim do loop de produtos -->
 
 
-  <!-- rodapé-->
-  <footer class="text-light mt-4" style="background-color: #2b2b2b;">
-    <div class="container">
-      <br>
-      <div class="row">
-        <div class="col-md-4">
-          <h5>Informações de Contato</h5>
-          <p>Endereço da Empresa</p>
-          <p>Telefone: (+244) 923 459 813<br> (+244) 999 459 813</p>
-          <p>Email: neprobes@gmail.com</p>
-        </div>
-        <div class="col-md-4">
-          <h5>Links Úteis</h5>
-          <ul class="list-unstyled">
-            <li><a class="links" href="#">Sobre Nós</a></li>
-            <li><a class="links" href="#">Política de Privacidade</a></li>
-            <li><a class="links" href="#">Termos e Condições</a></li>
-
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <h5>Siga-nos</h5>
-          <ul class="list-inline">
-            <li class="list-inline-item"><a href="https://www.facebook.com/robespersonalizadoseacessoriosdenoivas"><i class="fab fa-facebook"></i> Facebook</a></li><br>
-            <li class="list-inline-item"><a href="https://wa.me/923459813"><i class="fab fa-whatsapp" style="color: green;"></i> Whatsapp</a></li><br>
-            <li class="list-inline-item"><a href="https://www.instagram.com/noivos_e_padrinhos/"><i class="fab fa-instagram" style="color: darkmagenta;"> </i> Instagram</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="text-center p-3">
-      <img src="img/logo.png" alt="logo"><br>
-      &copy; 2023 Noivos & Padrinhos. Todos os direitos reservados.
-    </div>
-  </footer>
-
+  <?php
+  require_once("./partials/_footer.php");
+  ?>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
@@ -137,6 +112,20 @@ if (isset($_GET["id_produto"])) {
       produto_id.href = `./adicionar_carrinho.php?id_produto=<?php echo $produto["id_produto"]; ?>&quantidade=${result.innerHTML}`;
     });
   </script>
+  <!-- ===============================================-->
+  <!--    JavaScripts-->
+  <!-- ===============================================-->
+  <script src="vendors/@popperjs/popper.min.js"></script>
+  <script src="vendors/bootstrap/bootstrap.min.js"></script>
+  <script src="vendors/is/is.min.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+  <script src="vendors/feather-icons/feather.min.js"></script>
+  <script>
+    feather.replace();
+  </script>
+  <script src="assets/js/theme.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
 </body>
 
 </html>

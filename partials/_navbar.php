@@ -65,7 +65,7 @@ $logado = isset($_SESSION["cliente"]);
     </form>
   </div>
 </nav> -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" style="min-height: 70px">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" style="min-height: 70px">
   <a class="navbar-brand" href="#">
     <img src="./img/logo.svg" height="40" width="120" alt="Logo">
   </a>
@@ -141,5 +141,66 @@ $logado = isset($_SESSION["cliente"]);
         </li>
       <?php endif ?>
     </ul>
+  </div>
+</nav> -->
+
+
+<nav class="navbar navbar-expand-lg navbar-light sticky-top py-3 d-block" data-navbar-on-scroll="data-navbar-on-scroll">
+  <div class="container">
+    <a class="navbar-brand d-inline-flex align-items-center" href="./index.php">
+      <img class="d-inline-block" style="height: 40px;" src="./img/logo.svg" alt="logo" /><span class="text-1000 fs-0 fw-bold ms-2">ATELIER DYANNE</span></a>
+    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <?php
+        for ($i = 0; $i < sizeof($categorias); $i++) :
+          $actualCategoria = $categorias[$i];
+        ?>
+          <li class="nav-item px-2">
+            <a href="./categoria.php?categoria_id=<?php echo $actualCategoria["id_categoria"] ?>" class="nav-link fw-medium active" aria-current="page" href="#categoryWomen"><?php echo $actualCategoria["nome_categoria"] ?></a>
+          </li>
+        <?php endfor ?>
+      </ul>
+
+      <!-- <form class="form-inline">
+        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
+          <i class="fas fa-search"></i> Buscar
+        </button>
+      </form> -->
+      <form class="d-flex align-items-center">
+        <a class="text-1000" href="./busca.php">
+          <svg class="feather feather-search me-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg></a>
+        <a class="text-1000 d-flex me-3" href="./carrinho.php">
+          <svg class="feather feather-shopping-cart" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg><span class="text-secondary font-weight-bold" style="font-size: 12px; font-weight: bold"><?php echo numerosItemsNoCarrinho(); ?></span></a>
+
+        <?php
+        if ($logado) :
+        ?>
+          <a class="text-1000" href="./pedidos.php">
+            <svg class="feather feather-user me-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg></a>
+        <?php endif ?>
+        <?php
+        if (!$logado) :
+        ?>
+          <a class="btn btn-lg btn-dark" href="./login.php">Entrar</a>
+        <?php endif ?>
+        <!-- <a class="text-1000" href="#!">
+          <svg class="feather feather-heart me-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg></a> -->
+      </form>
+    </div>
   </div>
 </nav>

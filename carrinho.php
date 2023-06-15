@@ -3,11 +3,13 @@
 
 <head>
   <title>Carrinho</title>
-  <link rel="shortcut icon" href="atelier.ico" type="image/x-icon">
+  <link rel="shortcut icon" type="image/x-icon" href="./img/2.svg" />
 
-  <link rel="stylesheet" href="carrinho.css">
+  <!-- <link rel="stylesheet" href="carrinho.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+
+  <link href="assets/css/theme.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -36,7 +38,7 @@
 
   <!-- Carrinho -->
   <div class="container mt-5">
-    <h2 class="texto1"> <i class="fa fa-shopping-basket" style="color: #cca152;"></i> Seu Carrinho</h2>
+    <h2 class="texto1 text-center"> <i class="fa fa-shopping-basket" style="color: #cca152;"></i> Seu Carrinho</h2>
     <table class="table">
       <thead>
         <tr class="linha1">
@@ -54,7 +56,7 @@
         ?>
           <tr class="linha">
             <td class="produto">
-              <img src="./admin/fotos_produtos/<?php echo $item["produto"]["foto_produto"] ?>" style="width: 100px; height: 120px;" alt="">
+              <img src="./admin/fotos_produtos/<?php echo $item["produto"]["foto_produto"] ?>" style="width: 100px; height: 120px; object-fit: cover;" alt="">
             </td>
             <td>
 
@@ -69,8 +71,8 @@
                   echo $total;
                   ?></td>
             <td>
-              <a href="./remover_carrinho.php?id_produto=<?php echo $item["produto"]["id_produto"] ?>">
-                <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i>Excluir</button>
+              <a class="text-danger font-weight-bold" href="./remover_carrinho.php?id_produto=<?php echo $item["produto"]["id_produto"] ?>">
+                <i class="fa fa-trash"></i>Excluir</button>
               </a>
             </td>
           </tr>
@@ -78,23 +80,29 @@
       </tbody>
     </table>
     <div class="text-right">
-      <h5>Total: $ <?php
-                    $totalCar = calcularTotal();
-                    echo $totalCar;
-                    ?></h5>
+      <h5 class="text-right text-success my-4" style="text-align: right">Total: $ <?php
+                                                                                  $totalCar = calcularTotal();
+                                                                                  echo $totalCar;
+                                                                                  ?></h5>
     </div>
     <?php
     if ($totalCar && $logado) :
     ?>
-      <div class="text-right">
-        <button class="btn btn-primary" id="checkout">Finalizar Compra</button>
+      <div class="text-right" style="text-align: right">
+        <button class="btn btn-lg btn-dark" id="checkout">Finalizar Compra</button>
       </div>
+      <!-- <div class="d-grid gap-2 d-md-block">
+                  <a class="btn btn-lg btn-dark" href="./adicionar_carrinho.php?id_produto=<?php echo $actualProduto["id_produto"] ?>" role="button">Adicionar ao carrinho</a>
+
+                </div> -->
     <?php endif ?>
   </div>
   <!-- sugestões -->
 
 
-
+  <?php
+  require_once("./partials/_footer.php");
+  ?>
   </div>
   <script src="https://js.stripe.com/v3"></script>
   <script>
@@ -121,7 +129,17 @@
     })
   </script>
 
+  <script src="vendors/@popperjs/popper.min.js"></script>
+  <script src="vendors/bootstrap/bootstrap.min.js"></script>
+  <script src="vendors/is/is.min.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+  <script src="vendors/feather-icons/feather.min.js"></script>
+  <script>
+    feather.replace();
+  </script>
+  <script src="assets/js/theme.js"></script>
 
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
 </body>
 
 </html>

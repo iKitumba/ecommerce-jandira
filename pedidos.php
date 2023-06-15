@@ -3,11 +3,13 @@
 
 <head>
   <title>Carrinho</title>
-  <link rel="shortcut icon" href="atelier.ico" type="image/x-icon">
+  <link rel="shortcut icon" type="image/x-icon" href="./img/2.svg" />
 
-  <link rel="stylesheet" href="carrinho.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="carrinho.css"> -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+
+  <link href="assets/css/theme.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -51,7 +53,7 @@
 
   <!-- Carrinho -->
   <div class="container mt-5 mb-5">
-    <h2 class="texto1">
+    <h2 class="texto1 text-center mb-2">
       <i class="fa fa-shopping-basket" style="color: #cca152;"></i> Seus pedidos
     </h2>
     <table class="table">
@@ -97,10 +99,28 @@
       </tbody>
     </table>
     <!-- sugestões -->
-
-
-
+    <h4 class="text-center my-5">
+      <a class=" text-danger" style="font-size: 1rem;" href="./logout.php">
+        Terminar sessão
+      </a>
+    </h4>
   </div>
+
+  <?php
+  require_once("./partials/_footer.php")
+  ?>
+
+  <script src="vendors/@popperjs/popper.min.js"></script>
+  <script src="vendors/bootstrap/bootstrap.min.js"></script>
+  <script src="vendors/is/is.min.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+  <script src="vendors/feather-icons/feather.min.js"></script>
+  <script>
+    feather.replace();
+  </script>
+  <script src="assets/js/theme.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
 </body>
 
 </html>
