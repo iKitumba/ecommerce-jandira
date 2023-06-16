@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 16, 2023 at 07:37 AM
+-- Generation Time: Jun 08, 2023 at 08:01 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -79,8 +79,7 @@ CREATE TABLE `categorias` (
 
 INSERT INTO `categorias` (`id_categoria`, `nome_categoria`) VALUES
 (1, 'Assessórios'),
-(2, 'Roupas'),
-(4, 'Aventais');
+(2, 'Roupas');
 
 -- --------------------------------------------------------
 
@@ -148,8 +147,13 @@ CREATE TABLE `itens_pedido` (
 --
 
 INSERT INTO `itens_pedido` (`id_itens_pedido`, `pedido_id`, `produto_id`, `quantidade_item`) VALUES
-(8, 8, 3, 2),
-(9, 9, 8, 2);
+(1, 1, 1, 2),
+(2, 2, 1, 2),
+(3, 3, 1, 1),
+(4, 3, 1, 3),
+(5, 3, 1, 1),
+(6, 6, 1, 2),
+(7, 7, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -176,9 +180,7 @@ INSERT INTO `pedidos` (`id_pedido`, `cliente_id`, `funcionario_id`, `data_pedido
 (2, 1, NULL, '2023-06-06', NULL, 'PAGO', NULL),
 (3, 1, 1, '2023-06-06', 'Teste', 'A_CAMINHO', 100.00),
 (6, 4, NULL, '2023-06-07', NULL, 'PAGO', 200.00),
-(7, 1, 1, '2023-06-07', 'Na minha vizinha', 'A_CAMINHO', 100.00),
-(8, 1, 1, '2023-06-10', 'Casa da vizinha ao lado', 'A_CAMINHO', 3500.00),
-(9, 1, NULL, '2023-06-15', NULL, 'PAGO', 4000.00);
+(7, 1, 1, '2023-06-07', 'Na minha vizinha', 'A_CAMINHO', 100.00);
 
 -- --------------------------------------------------------
 
@@ -202,12 +204,7 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`id_produto`, `nome_produto`, `foto_produto`, `preco_produto`, `categoria_id`, `quantidade_produto`, `criado_aos`, `descricao_produto`) VALUES
-(3, 'Avental 1', '5aaa3b2908fbc83b31da407471a81d03.jpeg', 1750.00, 4, 18, '2023-06-10', 'Tampouco é grande a distância entre a técnica do almoço e a percepção dos profissionais da persuasão de que todos os tipos de coisas desejáveis, além da comida'),
-(4, 'Avental 2', '6dfabcc8ce4db96fed1cd6fd6039a7ca.jpg', 500.00, 4, 2, '2023-06-12', 'Tampouco é grande a distância entre a técnica do almoço e a percepção dos profissionais da persuasão de que todos os tipos '),
-(5, 'Pijama', 'dfdaba22c4c9557279b0e54262879b12.jpeg', 120.00, 2, 18, '2023-06-12', 'Pijamas personalizados feitos a sua medida. Aproveite e faça a sua encomenda'),
-(6, 'Bolsa ', '228e5f3343477590b930b92b6c897190.jpg', 4500.00, 1, 20, '2023-06-12', 'Disponivel em apenas uma cor. Otima para usar em qualquer ocasiao '),
-(7, 'Bolsa Lorem', 'e9ff3ee6ff141c99974b967d9675bd05.jpg', 5500.00, 1, 4, '2023-06-12', 'A bolsa lorem e otima para qualquer ocasiao, disponivel apenas em uma cor. Stock limitado'),
-(8, 'Brinco Soft', '776ea07ca9ca7369bdcb2e43a4642f0f.jpg', 2000.00, 1, 8, '2023-06-12', 'legante e sofisticado, excelente opção para um jantar o uma festa de gala');
+(1, 'Relógio', '76185fc2a031e4e75658c8f484b3b92d.jpg', 100.00, 1, 13, '2023-06-04', 'Um relógio de alta qualidade e com muito bom feeling o que te dará uma auria diferente no recintos frequentados');
 
 --
 -- Indexes for dumped tables
@@ -290,7 +287,7 @@ ALTER TABLE `cargos`
 -- AUTO_INCREMENT for table `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `clientes`
@@ -308,19 +305,19 @@ ALTER TABLE `funcionarios`
 -- AUTO_INCREMENT for table `itens_pedido`
 --
 ALTER TABLE `itens_pedido`
-  MODIFY `id_itens_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_itens_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables

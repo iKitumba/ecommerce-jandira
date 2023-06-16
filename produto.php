@@ -20,6 +20,9 @@ if (isset($_GET["id_produto"])) {
 <html>
 
 <head>
+  <meta name="theme-color" content="#000000" />
+
+
 
   <meta charset="UTF-8" />
   <title>Aventais</title>

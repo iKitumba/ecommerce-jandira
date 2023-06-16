@@ -2,6 +2,9 @@
 <html>
 
 <head>
+  <meta name="theme-color" content="#000000" />
+
+
   <title>Atelier Dyanne </title>
   <link rel="shortcut icon" href="atelier.ico" type="image/x-icon" />
   <meta charset="UTF-8" />

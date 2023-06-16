@@ -2,6 +2,9 @@
 <html>
 
 <head>
+  <meta name="theme-color" content="#000000" />
+
+
 
   <title>Aventais</title>
   <link rel="shortcut icon" type="image/x-icon" href="./img/2.svg" />

@@ -19,6 +19,9 @@ if (isset($_GET["pesquisa"])) {
 <html>
 
 <head>
+  <meta name="theme-color" content="#000000" />
+
+
 
   <meta charset="UTF-8" />
   <title>Busca</title>
@@ -30,7 +33,7 @@ if (isset($_GET["pesquisa"])) {
   <link href="assets/css/theme.css" rel="stylesheet" />
 
   <style>
-    #lista_podutos {
+    #lista_produtos {
       width: 100%;
       display: grid;
       gap: 12px;
@@ -43,6 +46,19 @@ if (isset($_GET["pesquisa"])) {
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
+    }
+
+
+    @media(max-width: 992px) {
+      #lista_produtos {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(max-width: 768px) {
+      #lista_produtos {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -78,7 +94,7 @@ if (isset($_GET["pesquisa"])) {
   <!-- aventais-->
   <div class="container mt-3">
 
-    <div id="lista_podutos">
+    <div id="lista_produtos">
       <!-- Início do loop de produtos -->
       <?php
       for ($i = 0; $i < sizeof($produtos); $i++) :
