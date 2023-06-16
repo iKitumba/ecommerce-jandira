@@ -1,8 +1,8 @@
 <?php
-  $server = "127.0.0.1";
-  $user = "root";
-  $password = "";
-  $database = "ecommerce";
+  $server = "mysql-kitumba.alwaysdata.net";
+  $user = "kitumba";
+  $password = "legends132004";
+  $database = "kitumba_dyanne";
 
   try {
     
@@ -12,5 +12,3 @@
     echo "Ocorreu um erro de conexão: {$error->getMessage()}";
     $connection = null;
   }
-
-?>
